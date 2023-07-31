@@ -1,11 +1,7 @@
 import { Lightning } from "@lightningjs/sdk";
 
-export class Logo extends Lightning.Component<Lightning.Component.TemplateSpecLoose> {
-
-    CanTouchThis = this.getByRef('CanTouchThis')!;
-    _textAnimation: any;
-
-    static override _template(){
+export class Logo extends Lightning.Component {
+    static  _template(){
         return {
             w: 1280, h: 720,
             rect: true, color: 0xFFFFFFF,

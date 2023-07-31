@@ -1,8 +1,7 @@
-import { Lightning, Router, Utils } from "@lightningjs/sdk";
-import { PageType } from "../utils/PageType";
+import { Lightning, Router } from "@lightningjs/sdk";
 
-export class NotFound extends Lightning.Component<Lightning.Component.TemplateSpecLoose, PageType> {
-    static override _template(){
+export class NotFound extends Lightning.Component {
+    static _template(){
         return {
             rect: true, w: 1920, h: 1080,
             color: 0xFF402662,
@@ -19,7 +18,7 @@ export class NotFound extends Lightning.Component<Lightning.Component.TemplateSp
         }
     }
 
-    override _handleKey(){
+    _handleKey(){
         Router.navigate(`home`);
     }
 }

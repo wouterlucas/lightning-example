@@ -14,8 +14,7 @@ export class App extends Lightning.Application {
         ];
     }
 
-    override _setup() {
+    _setup() {
         Router.startRouter(routes, this);
     }
-
 }

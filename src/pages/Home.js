@@ -1,9 +1,8 @@
 import { Lightning } from "@lightningjs/sdk";
-import { PageType } from "../utils/PageType";
 import { Logo } from "../components";
 
-export class Home extends Lightning.Component<Lightning.Component.TemplateSpecLoose, PageType> {
-    static override _template(){
+export class Home extends Lightning.Component {
+    static _template(){
         return {
             Background: {
                 x: 0, y: 0, w: 1280, h: 720,
@@ -20,7 +19,7 @@ export class Home extends Lightning.Component<Lightning.Component.TemplateSpecLo
     }
 
 
-    override _init() {
+    _init() {
         console.log('init home');
     }
 

@@ -1,14 +1,8 @@
 import { Lightning, Router } from "@lightningjs/sdk";
-import { PageType } from "../utils/PageType";
 
-export interface ErrorTemplateSpec extends Lightning.Component.TemplateSpec {
-    Error: object;
-}
+export class Error extends Lightning.Component {
 
-export class Error extends Lightning.Component<ErrorTemplateSpec, PageType> {
-    Error = this.getByRef('Error')!;
-
-    static override _template(){
+    static _template(){
         return {
             rect: true, w: 1920, h: 1080,
             color: 0xFFF1465B,
@@ -29,17 +23,19 @@ export class Error extends Lightning.Component<ErrorTemplateSpec, PageType> {
         }
     }
 
-    override _handleEnter(){
+    _handleEnter(){
         Router.navigate("home")
     }
 
-    override set params(args: any){
+    set params(args){
         const {request} = args;
         this.error = request;
     }
 
 
-    set error(obj: any){
+    set error(obj){
+        this.Error = this.getByRef('Error');
+
         if(!obj.page){
             this.Error.text = obj.error;
         }else{

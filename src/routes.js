@@ -3,9 +3,7 @@ import {
     Home, Splash, Error, NotFound,
 } from './pages';
 
-import { Router } from "@lightningjs/sdk";
-
-export const routes: Router.Config =  {
+export const routes = {
     root: 'Splash',
     routes: [
         {
