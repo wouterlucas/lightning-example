@@ -2,7 +2,7 @@
  * Main entry point for the application.
  */
 
-// set css
+import fontLoader from './utils/fontLoader';
 import styling from './utils/styling'
 import { App } from './App'
 
@@ -21,5 +21,13 @@ const options = {
     debug: false,
 }
 
-const app = new App(options);
-document.body.appendChild(app.stage.getCanvas());
+const fonts = [
+    // {family: 'regular', url: './Roboto-Regular.ttf', descriptors: {}}
+]
+
+fontLoader(fonts).then(() => {
+    const app = new App(options);
+    document.body.appendChild(app.stage.getCanvas());
+})
+
+
